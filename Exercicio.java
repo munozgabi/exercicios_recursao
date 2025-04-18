@@ -153,19 +153,22 @@ public class Exercicio{
         return binaryToDecimal(numero, i+1);
     }
 
+    public int calculo(int m, int n){
+        if(m == 0){
+            return n + 1;
+        }
+        if(m > 0 && n == 0){
+            return calculo(m - 1, 1);
+        }
+        else{
+            return calculo(m - 1, calculo(m, n - 1));
+        }
+    }
     
 
     public static void main(String[] args) {
         Exercicio e = new Exercicio();
-        System.out.println(e.f(2)); //6
-        System.out.println(e.f(4)); //5
-        System.out.println(e.f(9)); //27
-
-        char[] palavra = {'a','n','a'}; //true
-        char[] palavra2 = {'a','n','e'}; //false
-        System.out.println(e.isPalindrome(palavra)); 
-        System.out.println(e.isPalindrome(palavra2)); 
-        double[][] array = {{1,2,3}, {4,5,6}};
-        System.out.println(e.somaElementos(array));
+        System.out.println(e.calculo(2, 1));
+        System.out.println(e.calculo(3, 4));
     }
 }
