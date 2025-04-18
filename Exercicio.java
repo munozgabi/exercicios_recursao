@@ -165,10 +165,20 @@ public class Exercicio{
         }
     }
     
+    public void metodoRecursivo(int x) {
+        if (x == 0){
+            System.out.println("Fim do programa");
+        }
+        else{
+            metodoRecursivo(x-3);
+            System.out.println(x);
+        }
+   }
 
     public static void main(String[] args) {
         Exercicio e = new Exercicio();
         System.out.println(e.calculo(2, 1));
         System.out.println(e.calculo(3, 4));
+        e.metodoRecursivo(6);
     }
 }
